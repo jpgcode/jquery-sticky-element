@@ -1,3 +1,3 @@
 $(function(){
-	sticky.init();
+	$('nav').sticky();
 });

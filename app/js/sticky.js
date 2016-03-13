@@ -1,19 +1,24 @@
 var sticky = (function(){
 
-	var $window 	           = $(window),
-		$stickyNav             = $('nav'),
-		$stickyParent          = $stickyNav.parent(),
-		stickyPos              = $stickyNav.offset().top,
-		stickyHeight           = $stickyNav.height(),
-		$stickyParent          = $stickyNav.parent(),
+	var $window, 
+		$stickyNav, 
+		$stickyParent, 
+		stickyPos,
+		stickyHeight,
+		stickyParentPaddingTop;
+
+	var init = function(elem, options){
+		$window 	       	   = $(window);
+		$stickyNav             = $(elem);
+		$stickyParent          = $stickyNav.parent();
+		stickyPos              = $stickyNav.offset().top;
+		stickyHeight           = $stickyNav.outerHeight();
 		stickyParentPaddingTop = $stickyParent.css('padding-top');
-
-
-	var init = function(){
-		eventHandlers();
+		
+		_eventHandlers();
 	}
 
-	var stickyValidation = function(){
+	var _stickyValidation = function(){
 
 		var scrollPos = $window.scrollTop();
 			
@@ -28,9 +33,9 @@ var sticky = (function(){
 		}
 	}
 
-	var eventHandlers = function(){
-		$window.scroll(function () {
-			stickyValidation();
+	var _eventHandlers = function(){
+		$window.on('scroll', function () {
+			_stickyValidation();
 		});
 	}
 
@@ -39,3 +44,18 @@ var sticky = (function(){
 	}
 
 }());
+
+//Create jquery plugin
+if (window.jQuery) {
+    (function($) {
+        $.fn.sticky = function(options) {
+            this.each(function() {
+                sticky.init(this, options);
+            });
+
+            return this;
+        };
+    })(window.jQuery);
+}else{
+	console.warn("jQuery library is not defined, please make sure it's added before this script");
+}

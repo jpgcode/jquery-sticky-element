@@ -1,4 +1,8 @@
+body, html{
+	height:auto; /* iOS position:fixed; elements fix (not 100%) */
+}
 body{
+	margin: 0;
 	color: #FFF;
 	background: #000;
 	box-sizing: border-box;
@@ -40,11 +44,11 @@ nav ul li a{
 }
 
 .wrapper{
-	width: 1280px;
+	width: 100%;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
-}
+}	
 
 .card{
 	width: 100%;
@@ -55,4 +59,10 @@ nav ul li a{
 
 .card.green{
 	background: #4E827D;
+}
+
+@media (min-width: 768px) {
+	.wrapper{
+		width: 1280px;
+	}
 }
