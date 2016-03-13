@@ -15,11 +15,11 @@ gulp.task('reloadBrowsers', () => {
 gulp.task('default', () => {
 
 	bs.init({
-      notify: false,
-      port: 9000,
-      server: { baseDir: ['app'] }
-  });
+		notify: false,
+		port: 9000,
+		server: { baseDir: ['app'] }
+  	});
 
-	gulp.watch(['app/*.html', 'app/**/*.js'], ['reloadBrowsers']);
+	gulp.watch(['app/*.html', 'app/**/*.js', 'app/**/*.css'], ['reloadBrowsers']);
 
 });
