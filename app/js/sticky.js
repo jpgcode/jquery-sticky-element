@@ -24,19 +24,22 @@ var sticky = (function(){
 			
 		if(scrollPos >= stickyPos){
 			$stickyNav.addClass('sticky');
-			//Add space previously occupied by nav
+
+			//Add space previously occupied by nav (improve this)
 			$stickyParent.css('padding-top', stickyHeight);
 		}else{
 			$stickyNav.removeClass('sticky');
-			//Go back to normal
+			//Go back to normal (improve this)
 			$stickyParent.css('padding-top', stickyParentPaddingTop);
 		}
 	}
 
 	var _eventHandlers = function(){
-		$window.on('scroll', function () {
-			_stickyValidation();
-		});
+		// $(window).on('scroll', function () {
+		// 	_stickyValidation();
+		// });
+
+		window.addEventListener('scroll', _stickyValidation);
 	}
 
 	return {
