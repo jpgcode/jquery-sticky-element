@@ -22,7 +22,7 @@ body{
 nav{
 	padding: 10px;
 	background: #666;
-	transform: translateZ(0);
+	transform: translateZ(0); /* Scroll Fix in iPad */
 }
 
 nav.sticky{

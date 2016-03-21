@@ -23,6 +23,7 @@ var sticky = (function(){
 		var scrollPos = $window.scrollTop();
 			
 		if(scrollPos >= stickyPos){
+
 			$stickyNav.addClass('sticky');
 
 			//Add space previously occupied by nav (improve this)
@@ -35,11 +36,11 @@ var sticky = (function(){
 	}
 
 	var _eventHandlers = function(){
-		// $(window).on('scroll', function () {
-		// 	_stickyValidation();
-		// });
+		//$(window).on('scroll', function () { _stickyValidation(); });
 
 		window.addEventListener('scroll', _stickyValidation);
+
+
 	}
 
 	return {
