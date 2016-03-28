@@ -1,3 +1,19 @@
-#jQuery sticky navigation plugin [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+#jQuery sticky element
 
-ToDo: Right now the sticky works with a translateZ to fix iPad scroll, but this needs to be done with JS.
+> Make any element sticky easily!
+
+##Support
+
+Internet Explorer 9+ and all other major browsers.
+
+## Authors
+
+**Jose Pablo Granados**
+ 
++ [github/jpgcode](https://github.com/jpgcode)
++ [twitter/jpgcode](http://twitter.com/jpgcode) 
+
+## License
+
+Copyright (c) 2016 Jose Pablo Granados
+Released under the MIT license
